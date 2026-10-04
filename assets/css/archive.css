@@ -836,3 +836,20 @@ html[lang="ja"] {
   --gy-hanja: "Noto Serif JP", "Noto Serif KR", serif;
   --gy-body: "Noto Sans JP", "Pretendard Variable", "Pretendard", sans-serif;
 }
+
+/* 언론보도 — 번역 기사(외국어 페이지에서 신문 이미지 대신) */
+.gy-article { max-width: 1000px; margin: 0 auto 56px; }
+.gy-article-src { font-size: 12.5px; letter-spacing: .04em; color: var(--gy-meta); }
+.gy-article-title { font-family: var(--gy-head); font-weight: 500; font-size: clamp(26px, 3.2vw, 40px); line-height: 1.25; letter-spacing: -.02em; margin: 8px 0 14px; }
+.gy-article-dek { font-size: 15px; line-height: 1.7; color: var(--gy-ink-2); border-left: 3px solid var(--gy-p1); padding-left: 14px; margin: 0 0 28px; }
+.gy-article-fig { margin: 0 0 14px; }
+.gy-article-fig img { width: 100%; height: auto; display: block; background: var(--gy-hover); }
+.gy-article-fig figcaption { font-size: 12px; color: var(--gy-meta); margin-top: 6px; line-height: 1.5; }
+.gy-article-fig.is-ceo { float: right; width: 46%; margin: 4px 0 18px 26px; }
+.gy-article-fig.is-work { float: left; width: 28%; max-width: 230px; margin: 6px 26px 14px 0; }
+.gy-article-body { font-size: 15.5px; line-height: 1.9; color: var(--gy-ink); }
+.gy-article-body p { margin: 0 0 1.1em; }
+.gy-article-by { clear: both; font-size: 13px; color: var(--gy-meta); border-top: 1px solid var(--gy-rule); padding-top: 12px; margin: 8px 0 0; }
+@media (max-width: 760px) {
+  .gy-article-fig.is-ceo, .gy-article-fig.is-work { float: none; width: 100%; max-width: none; margin: 0 0 16px; }
+}
