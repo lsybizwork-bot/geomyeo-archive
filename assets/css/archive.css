@@ -648,12 +648,15 @@ body.gy {
 .gy-grid > *, .gy-bio > *, .gy-catalog > *, .gy-surveys > *, .gy-book > *, .gy-papers > article > *, .gy-goals > li > *, .gy-day > *, .gy-hero-stage > * { min-width: 0; }
 
 /* ===== 최종 조정 (기존 규칙보다 뒤에 둠) ===== */
-/* 프로그램 구성: 카드 안 줄 맞춤 (subgrid) */
-.gy-programs { grid-template-rows: auto auto auto auto auto; }
-.gy-program { display: grid; grid-template-rows: subgrid; grid-row: span 5; row-gap: 0; }
+/* 프로그램 구성: 카드 안 줄 맞춤 (flex, 날짜·장소는 항상 바닥 정렬) */
+.gy-programs { align-items: stretch; }
+.gy-program { display: flex; flex-direction: column; height: 100%; }
 .gy-program h4 { font-size: 17.5px; line-height: 1.45; }
-.gy-program p { align-self: start; }
-.gy-program .gy-meta { align-self: end; }
+.gy-program .gy-meta { margin-top: auto; }
+
+/* 성과 수치: 숫자+단위는 항상 한 줄 (CJK 폰트에서도 줄바꿈 금지) */
+.gy-figures dd { white-space: nowrap; font-size: clamp(40px, 5vw, 66px); }
+html[lang="zh-Hans"] .gy-figures dd, html[lang="ja"] .gy-figures dd { font-size: clamp(34px, 4.4vw, 58px); }
 
 /* 긴 섹션 제목 한 줄 */
 .gy-head.is-long h2 { grid-column: 2 / 13; font-size: clamp(20px, 2.05vw, 29px); white-space: nowrap; letter-spacing: -.03em; }
@@ -846,7 +849,7 @@ html[lang="ja"] {
 .gy-article-fig img { width: 100%; height: auto; display: block; background: var(--gy-hover); }
 .gy-article-fig figcaption { font-size: 12px; color: var(--gy-meta); margin-top: 6px; line-height: 1.5; }
 .gy-article-fig.is-ceo { float: right; width: 46%; margin: 4px 0 18px 26px; }
-.gy-article-fig.is-work { float: left; width: 28%; max-width: 230px; margin: 6px 26px 14px 0; }
+.gy-article-fig.is-work { float: left; width: 28%; max-width: 230px; margin: 20px 26px 14px 0; }
 .gy-article-body { font-size: 15.5px; line-height: 1.9; color: var(--gy-ink); }
 .gy-article-body p { margin: 0 0 1.1em; }
 .gy-article-by { clear: both; font-size: 13px; color: var(--gy-meta); border-top: 1px solid var(--gy-rule); padding-top: 12px; margin: 8px 0 0; }
