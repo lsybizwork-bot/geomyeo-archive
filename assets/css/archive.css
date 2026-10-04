@@ -648,11 +648,13 @@ body.gy {
 .gy-grid > *, .gy-bio > *, .gy-catalog > *, .gy-surveys > *, .gy-book > *, .gy-papers > article > *, .gy-goals > li > *, .gy-day > *, .gy-hero-stage > * { min-width: 0; }
 
 /* ===== 최종 조정 (기존 규칙보다 뒤에 둠) ===== */
-/* 프로그램 구성: 카드 안 줄 맞춤 (flex, 날짜·장소는 항상 바닥 정렬) */
-.gy-programs { align-items: stretch; }
-.gy-program { display: flex; flex-direction: column; height: 100%; }
+/* 프로그램 구성: 사진은 위에서 정렬, 내용은 자연스럽게 흐르도록 (빈 줄 생기지 않게) */
+.gy-programs { align-items: start; }
+.gy-program { display: flex; flex-direction: column; }
 .gy-program h4 { font-size: 17.5px; line-height: 1.45; }
-.gy-program .gy-meta { margin-top: auto; }
+.gy-program .gy-meta { margin-top: 10px; }
+/* 제목 줄바꿈: 일본어는 단어(띄어쓰기) 단위로만 줄바꿈 — 단어 중간 금지 */
+html[lang="ja"] .gy-program h4 { word-break: keep-all; overflow-wrap: anywhere; }
 
 /* 성과 수치: 숫자+단위는 항상 한 줄 (CJK 폰트에서도 줄바꿈 금지) */
 .gy-figures dd { white-space: nowrap; font-size: clamp(40px, 5vw, 66px); }
