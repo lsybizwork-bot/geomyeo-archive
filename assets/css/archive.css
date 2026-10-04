@@ -818,3 +818,21 @@ body.gy {
 
 /* 중국어·일본어는 공백이 없어 줄바꿈 규칙을 일반값으로 (keep-all은 한국어용) */
 html[lang="zh-Hans"] body.gy, html[lang="ja"] body.gy { word-break: normal; overflow-wrap: anywhere; }
+
+/* 번역 페이지 세부 보정 */
+html:not([lang="ko"]) .gy-hero-meta div { white-space: normal; }
+.gy-regions li { flex-wrap: wrap; }
+.gy-regions span { overflow-wrap: anywhere; }
+
+/* 언어별 글꼴: 각 나라식 글자 모양으로 표시하되(한국=KR, 중국=SC, 일본=JP),
+   모두 같은 Noto 패밀리라 서로 조화롭게 보이도록 변수만 교체 */
+html[lang="zh-Hans"] {
+  --gy-head: "Hahmlet", "Noto Serif SC", "Noto Serif KR", serif;
+  --gy-hanja: "Noto Serif SC", "Noto Serif KR", serif;
+  --gy-body: "Noto Sans SC", "Pretendard Variable", "Pretendard", sans-serif;
+}
+html[lang="ja"] {
+  --gy-head: "Hahmlet", "Noto Serif JP", "Noto Serif KR", serif;
+  --gy-hanja: "Noto Serif JP", "Noto Serif KR", serif;
+  --gy-body: "Noto Sans JP", "Pretendard Variable", "Pretendard", sans-serif;
+}
