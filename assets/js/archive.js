@@ -8,7 +8,7 @@
      예) "https://www.youtube.com/watch?v=XXXXXXXXXXX"  또는  "https://youtu.be/XXXXXXXXXXX"
      비워 두면 영상 영역은 화면에 표시되지 않습니다.
      ============================================================ */
-  var INTERVIEW_VIDEO_URL = "";
+  var INTERVIEW_VIDEO_URL = "https://youtu.be/UzkkIIl-l-U";
 
   /* ---------- 다국어 문자열 (언어는 <html lang>으로 결정) ---------- */
   var LANG = (document.documentElement.lang || "ko").slice(0, 2);
