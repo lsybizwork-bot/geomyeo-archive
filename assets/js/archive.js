@@ -42,7 +42,7 @@
       held: function (o) { return o + " 所蔵"; },
       heldCredit: function (o) { return o + " 所蔵 · 画像出典："; },
       artist: "剣如 柳熙綱、", zoomWide: "屏風全体を拡大表示", zoom: "拡大表示",
-      pageAlt: function (p) { return "図録 " + p + " 面目"; },
+      pageAlt: function (p) { return "図録 " + p + " ページ"; },
       video: "剣如 柳熙綱 ご遺族インタビュー映像"
     }
   };
